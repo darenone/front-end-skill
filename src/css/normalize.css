@@ -1,0 +1,18 @@
+.box1 {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  position: relative;
+}
+.box1 .box2 {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-family: serif;
+}
