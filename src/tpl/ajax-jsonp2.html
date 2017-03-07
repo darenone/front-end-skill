@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ajax测试</title>
+</head>
+
+<body>
+    <h1>员工查询</h1>
+    <label>请输入员工编号：</label>
+    <input type="text" id="keyword" />
+    <button id="search">查询</button>
+    <p id="searchResult"></p>
+    <h1>员工新建</h1>
+    <label>请输入员工姓名：</label>
+    <input type="text" id="staffName" />
+    <br>
+    <label>请输入员工编号：</label>；
+    <input type="text" id="staffNumber" />
+    <br>
+    <label>请选择员工性别：</label>
+    <select id="staffSex">
+        <option>女</option>
+        <option>男</option>
+    </select>
+    <br>
+    <label>请输入员工职位：</label>
+    <input type="text" id="staffJob" />
+    <br>
+    <button id="save">保存</button>
+    <p id="createResult"></p>
+</body>
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#search").click(function(){
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8081/ajaxDemo/php/serverjsonp2.php?number=" + $("#keyword").val(),//这里是完整的URL地址
+            dataType: "json",//jsonp只能解决get请求造成的跨域问题
+            success: function(data) {  //客户端请求成功
+                if (data.success) {
+                    $("#searchResult").html(data.msg);
+                } else {
+                    $("#searchResult").html("出现错误：" + data.msg);
+                }
+            },
+            error: function(jqXHR){ //客户端请求不成功
+               alert("发生错误：" + jqXHR.status);
+            },
+        });
+    });
+})
+
+</script>
+
+</html>

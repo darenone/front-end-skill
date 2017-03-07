@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>chrome断点调试</title>
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="jumbotron center-block text-center" style="width: 50%;height: 20%;">
+        <h1>This is jumbotron</h1>
+        <p>hello world</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">联系我吧</a></p>
+    </div>
+</body>
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$(".jumbotron").click(function(){
+			var a = 0;
+            for(var i = 0;i < 10;i++){
+                a += i;
+            }
+           c(a);
+           //c(b);
+		})
+        window.setInterval(function(){
+            console.log('hello')
+        },1000)
+
+        function c(obj){
+            console.log(obj,'font-size: 60px;color: red')
+
+        }
+	})
+</script>
+</html>
