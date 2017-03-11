@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>css小技巧</title>
+    <style>
+    .box1 {
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        position: relative;
+        background-color: black;
+    }
+    .box1 .box2 {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+		background-color: white;
+    }
+    </style>
+</head>
+<link rel="stylesheet" href="../css/normalize.css">
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+
+</html>
