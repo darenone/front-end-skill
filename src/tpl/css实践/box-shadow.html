@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>box-shadow效果</title>
+	<style>
+		.outset{
+			width: 300px;
+			height: 300px;
+			box-shadow: 3px 3px 10px black;
+			margin-bottom: 20px;
+		}
+		.inset{
+			width: 300px;
+			height: 300px;
+			box-shadow: -3px -3px 10px black inset;
+			margin-bottom: 20px;
+		}
+		.multi{
+			width: 300px;
+			height: 300px;
+			box-shadow:0px 0px 12px 10px #33CC00 inset,3px 3px 10px black;
+		}
+	</style>
+</head>
+<body>
+	<div class="outset"></div>
+	<div class="inset"></div>
+	<div class="multi"></div>
+</body>
+</html>
