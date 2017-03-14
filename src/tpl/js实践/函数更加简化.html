@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div{
+			width: 300px;
+			height: 300px;
+			border: 1px solid black;
+		}
+	</style>
+	<body>
+		<div id="box1"></div>
+		<input type="button" value="变宽"  id="btn1"/>
+		<input type="button" value="变高"  id="btn2"/>
+		<input type="button" value="变红"  id="btn3"/>
+	</body>
+	<script type="text/javascript">
+		window.onload = function(){
+			var box1 = document.getElementById("box1");
+			var btn1 = document.getElementById("btn1");
+			var btn2 = document.getElementById("btn2");
+			var btn3 = document.getElementById("btn3");
+			btn1.onclick = function(){
+				setStyle('width',400);
+			}
+			btn2.onclick = function(){
+				
+			}
+			btn3.onclick = function(){
+				
+			}
+			function setStyle(attr,value){
+				box1.style.attr = value + 'px';
+			}
+		}
+	</script>
+</html>

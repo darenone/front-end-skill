@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div{
+			width: 300px;
+			height: 300px;
+			border: 1px solid black;
+		}
+	</style>
+	<body>
+		<div id="box1"></div>
+		<input type="button" value="变为红色"  id="btn1"/>
+		<input type="button" value="变为蓝色"  id="btn2"/>
+		<input type="button" value="恢复原样"  id="btn3"/>
+	</body>
+	<script type="text/javascript">
+		window.onload = function(){
+			var box1 = document.getElementById("box1");
+			var btn1 = document.getElementById("btn1");
+			var btn2 = document.getElementById("btn2");
+			var btn3 = document.getElementById("btn3");
+			btn1.onclick = function(){
+				toRed();
+			}
+			btn2.onclick = function(){
+				toGreen();
+			}
+			btn3.onclick = function(){
+				toWhite();
+			}
+			function toRed(){
+				box1.style.background = "red";
+			}
+			function toGreen(){
+				box1.style.background = "green";
+			}
+			function toWhite(){
+				box1.style.background = "white";
+			}
+		}
+	</script>
+</html>
