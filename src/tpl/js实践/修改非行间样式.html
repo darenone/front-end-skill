@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.a{
+		width: 300px;
+		height: 300px;
+		background-color: red;
+	}
+	.b{
+		width: 500px;
+		height: 500px;
+		background-color: green;
+	}
+</style>
+<body>
+ <div class="a" id="box1"></div>
+</body>
+<script>
+	window.onload = function () {
+		var box = document.getElementById("box1");
+		box.onclick = function(){
+			setStyle("b");
+		}
+		function setStyle(num){
+			box.className = num;
+			console.log(box.className)
+		}
+	}
+</script>
+</html>

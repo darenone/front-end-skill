@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid black;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<input type="checkbox" value="" checked="true" /><br>
+	<input type="checkbox" value=""/><br>
+	<input type="checkbox" value=""/><br>
+	<input type="checkbox" value=""/><br>
+	<input type="checkbox" value=""/><br>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<h2>选中一个input使对应的div变颜色</h2>
+</body>
+<script>
+	var inputList = document.getElementsByTagName("input");
+	var divList = document.getElementsByTagName("div");
+	for(var i = 0;i < inputList.length;i++){
+		if(this.checked == true){
+			console.log(this);
+		}
+	}
+</script>
+</html>

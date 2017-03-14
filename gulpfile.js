@@ -13,7 +13,7 @@ gulp.task('watchless',function(){
 
 gulp.task('connect',function(){
 	connect.server({
-		root: '../demo/',
+		root: '../demo/src/tpl/',
 		livereload: true
 	});
 });

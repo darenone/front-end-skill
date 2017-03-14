@@ -24,16 +24,16 @@
 			var btn2 = document.getElementById("btn2");
 			var btn3 = document.getElementById("btn3");
 			btn1.onclick = function(){
-				setStyle('width',400);
+				setStyle('width','400px');
 			}
 			btn2.onclick = function(){
-				
+				setStyle('height','400px')
 			}
 			btn3.onclick = function(){
-				
+				setStyle('background','red');
 			}
 			function setStyle(attr,value){
-				box1.style.attr = value + 'px';
+				box1.style[attr] = value;
 			}
 		}
 	</script>

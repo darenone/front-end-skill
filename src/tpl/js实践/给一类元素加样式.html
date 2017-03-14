@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			float: left;
+			margin-left: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+<script>
+	window.onload = function(){
+		var arr = [1,2,3,4];
+		var div = document.getElementsByTagName("div");
+		for(var i = 0;i < div.length;i++){
+			div[i].onclick = function(){
+				for(var j = 0;j < div.length;j++){
+					div[j].style.background = "red";
+				}
+				this.style.background = "green";
+			}
+		}
+	}
+</script>
+</html>
