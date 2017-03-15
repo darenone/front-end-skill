@@ -22,10 +22,22 @@
 	window.onload = function(){
 		var btn = document.getElementById("btn");
 		var inputList = document.getElementsByTagName("div")[0].children;
+		var bool = true;
 		btn.onclick = function(){
-			for(var i = 0;i < inputList.length;i++){
-				inputList[i].checked = true;
+			if(bool){
+				btn.value = '取消全选';
+				bool = false;
+				for(var i = 0;i < inputList.length;i++){
+					inputList[i].checked = !false;
+				}
+			}else {
+				btn.value = '全选';
+				bool = true;
+				for(var i = 0;i < inputList.length;i++){
+					inputList[i].checked = !true;
+				}
 			}
+
 		}
 	}
 </script>

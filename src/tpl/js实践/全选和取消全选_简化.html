@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="全选" id="btn"/>
+	<div>
+		<input type="checkbox"/>
+		<input type="checkbox"/>
+		<input type="checkbox"/>
+		<input type="checkbox"/>
+		<input type="checkbox"/>
+		<input type="checkbox"/>
+		<input type="checkbox"/>
+		<input type="checkbox"/>
+	</div>
+	<h2>如何取消全选？</h2>
+</body>
+<script>
+	window.onload = function(){
+		var btn = document.getElementById("btn");
+		var inputList = document.getElementsByTagName("div")[0].children;
+		var bool = true;
+		btn.onclick = function(){
+			bool = !bool;
+			if(bool){
+				btn.value = '取消全选';
+				for(var i = 0;i < inputList.length;i++){
+					inputList[i].checked = bool;
+				}
+			}else {
+				btn.value = '全选';
+				for(var i = 0;i < inputList.length;i++){
+					inputList[i].checked = bool;
+				}
+			}
+
+		}
+	}
+</script>
+</html>
