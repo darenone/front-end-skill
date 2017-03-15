@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		div{
+			width: 300px;
+			height: 300px;
+			border: 1px solid black;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="选项卡1">
+	<input type="button" value="选项卡2">
+	<input type="button" value="选项卡3">
+	<input type="button" value="选项卡4">
+	<div>选项卡1</div>
+	<div style="display: none;">选项卡2</div>
+	<div style="display: none;">选项卡3</div>
+	<div style="display: none;">选项卡4</div>
+</body>
+<script>
+	window.onload = function(){
+		var btnList = document.getElementsByTagName("input");
+		var divList = document.getElementsByTagName("div")
+		btnList[0].style.background = 'red';
+		for(var i = 0;i < btnList.length;i++){
+			btnList[i].index = i;
+			btnList[i].onclick = function(){
+				for(var j = 0;j < divList.length;j++){
+					btnList[j].style.background = 'buttonface';
+					divList[j].style.display = 'none';
+				}
+				this.style.background = 'red';
+				divList[this.index].style.display = 'block';
+			}
+		}
+	}
+</script>
+</html>

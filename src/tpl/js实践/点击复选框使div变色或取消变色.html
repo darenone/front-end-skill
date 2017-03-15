@@ -13,8 +13,8 @@
 	</style>
 </head>
 <body>
-	<input type="checkbox" value="" checked="true" /><br>
-	<input type="checkbox" value=""/><br>
+	<input type="checkbox" value=""  /><br>
+	<input type="checkbox" value="" /><br>
 	<input type="checkbox" value=""/><br>
 	<input type="checkbox" value=""/><br>
 	<input type="checkbox" value=""/><br>
@@ -29,8 +29,13 @@
 	var inputList = document.getElementsByTagName("input");
 	var divList = document.getElementsByTagName("div");
 	for(var i = 0;i < inputList.length;i++){
-		if(this.checked == true){
-			console.log(this);
+		inputList[i].index = i;
+		inputList[i].onclick = function(){
+			if(this.checked){
+				divList[this.index].style.background = 'red';
+			}else {
+				divList[this.index].style.background = 'white';
+			}
 		}
 	}
 </script>
