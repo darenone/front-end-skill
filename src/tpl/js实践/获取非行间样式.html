@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 300px;
+			height: 300px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+<script>
+	window.onload = function(){
+		//IE和其他浏览器有差异
+		function getStyle(obj,name){
+			if(obj.currentStyle){
+				return obj.currentStyle[name];
+			}else {
+				return getComputedStyle(obj,false)[name]
+			}
+		}
+		var div = document.getElementsByTagName("div")[0];
+		console.log(getStyle(div,'height'));
+		console.log(getStyle(div,'background'));
+	}
+</script>
+</html>
