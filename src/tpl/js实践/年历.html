@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 320px;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			border: 1px solid black;
+			padding-left: 5px;
+		}
+		span{
+			width: 100px;
+			height: 100px;
+			background: red;
+			margin-right: 5px;
+			margin-bottom: 5px;
+			text-align: center;
+			line-height: 100px;
+			transition: all 0.5s;
+		}
+		span:hover{
+			background: orange;
+		}
+		p{
+			width: 100px;
+			height: 100px;
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<span>1</span>
+		<span>2</span>
+		<span>3</span>
+		<span>4</span>
+		<span>5</span>
+		<span>6</span>
+		<span>7</span>
+		<span>8</span>
+		<span>9</span>
+		<span>10</span>
+		<span>11</span>
+		<span>12</span>
+	</div>
+	<p></p>
+</body>
+<script>
+	window.onload = function(){
+		var arr = [
+			'1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'
+		]
+		var spanList = document.getElementsByTagName("div")[0].children;
+		var p = document.getElementsByTagName("p")[0];
+		for(var i = 0;i < spanList.length;i++){
+			spanList[i].index = i;
+			spanList[i].onmouseover = function(){
+				for(var j = 0;j < arr.length;j++){
+					p.innerHTML = arr[this.index];
+				}
+			}
+		}
+	}
+</script>
+</html>

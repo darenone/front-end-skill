@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" name="" id="input1" value="1">+
+	<input type="text" name="" id="input2" value="2">
+	<input type="button" value="求和" id="btn">
+</body>
+<script>
+	window.onload = function(){
+		var input1 = document.getElementById("input1");
+		var input2 = document.getElementById("input2");
+		var btn = document.getElementById("btn");
+		btn.onclick = function(){
+			var a = parseInt(input1.value);
+			var b = parseInt(input2.value);
+			if(isNaN(a)||isNaN(b)){
+				alert("输入有误,请重新输入");
+			}
+			var c = sum(a,b);
+			btn.value = c;
+		}
+		function sum(a,b){
+			return a + b;
+		}
+	}
+</script>
+</html>
