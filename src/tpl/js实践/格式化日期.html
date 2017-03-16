@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" name="" id="input1" value="1234332234">
+	<input type="text" name="" id="input2">
+	<input type="button" value="日期格式化" id="btn">
+</body>
+<script>
+	window.onload = function(){
+		var input1 = document.getElementById("input1")
+		var input2 = document.getElementById("input2")
+		var btn = document.getElementById("btn")
+		btn.onclick = function(){
+			var val1 = input1.value;
+			var val2 = setTime(val1);
+			input2.value = val2;
+		}
+		function setTime(date){
+			var day = Math.floor(date/3600/24);
+			//比如54 = 24*2+6  所以54%24 = 6
+			var hour = Math.floor(date/3600%24);
+			var minute = Math.floor(date/60%60);
+			var second = date % 60;
+			if(day < 10){
+				day = '0'+ day;
+			}
+			if(hour < 10){
+				hour = '0' + hour;
+			}
+			if(minute < 10){
+				minute = '0' + minute;
+			}
+			if(second < 10){
+				second = '0' + second;
+			}
+			return day + '天' + hour + '时' + minute + '分' + second + '秒';
+		}
+	}
+</script>
+</html>
