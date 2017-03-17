@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	div{
+		width: 400px;
+		height:50px;
+		background: red;
+		margin: 0 auto;
+	}
+</style>
+<body>
+<div></div>
+<div>
+	<input type="button" value="开始计时" id="btn1">
+	<input type="button" value="停止计时" id="btn2">
+	<input type="button" value="清零" id="btn3">
+</div>
+</body>
+<script>
+	window.onload = function(){
+		var div = document.getElementsByTagName("div")[0];
+		var btn1 = document.getElementById("btn1");
+		var btn2 = document.getElementById("btn2");
+		var btn3 = document.getElementById("btn3");
+		var hour = 0;
+		var minute = 0;
+		var second = 0;
+		function setTime(){
+			second += 1;
+			if(second>60){
+				minute += second % 60;
+				second = 0;
+				if(minute > 60){
+					hour += minute % 60;
+					minute = 0;
+				}
+			}
+			div.innerHTML = hour + '时' + minute + '分' + second + '秒'
+		}
+		var timer = null;
+		btn1.onclick = function(){
+		    timer = setInterval(setTime,1)
+		}
+		btn2.onclick = function(){
+			clearInterval(timer);
+		}
+		btn3.onclick = function(){
+			hour = 0;
+			minute = 0;
+			second = 0;
+			div.innerHTML = hour + '时' + minute + '分' + second + '秒';
+		}
+	}
+</script>
+
+</html>
