@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p></p>
+</body>
+<script>
+	window.onload = function(){
+		var p = document.getElementsByTagName("p")[0];
+		var arr = [10,2,30,15,26,10];
+		// p.innerHTML = arr.sort(function sort(val1,val2){
+		// 	if (val1 > val2) {
+		// 		return -1;
+		// 	}else if (val1 < val2) {
+		// 		return 1;
+		// 	}else {
+		// 		return 0;
+		// 	}
+		// });
+		p.innerHTML = arr.sort(function(val1,val2){
+			return val2 - val1;
+		});
+
+	}
+</script>
+</html>
