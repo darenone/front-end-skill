@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			margin: 0 auto;
+			display: flex;
+			flex-direction: row;
+			width:50%;
+		}
+		span{
+			font-size: 70px;
+			font-family: '楷体';
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<img src="../../img/number/0.gif" alt="">
+		<img src="../../img/number/1.gif" alt="">
+		<img src="../../img/number/0.gif" alt="">
+		<img src="../../img/number/1.gif" alt="">
+		<span>年</span>
+		<img src="../../img/number/0.gif" alt="">
+		<img src="../../img/number/1.gif" alt="">
+		<span>月</span>
+		<img src="../../img/number/0.gif" alt="">
+		<img src="../../img/number/1.gif" alt="">
+		<span>日</span>
+		<img src="../../img/number/0.gif" alt="">
+		<img src="../../img/number/1.gif" alt="">
+		<span>时</span>
+		<img src="../../img/number/3.gif" alt="">
+		<img src="../../img/number/0.gif" alt="">
+		<span>分</span>
+		<img src="../../img/number/3.gif" alt="">
+		<img src="../../img/number/4.gif" alt="">
+		<span>秒</span>
+	</div>
+</body>
+<script>
+	window.onload = function(){
+
+		var imgList = document.getElementsByTagName("img");
+		setInterval(function(){
+			var today = new Date();
+			var h=today.getHours()
+			if (h < 10) {
+				h = '0' + h;
+			}
+			var m=today.getMinutes()
+			if(m < 10){
+				m = '0' + m;
+			}
+			var s=today.getSeconds()
+			if(s < 10){
+				s = '0' + s;
+			}
+			var year = today.getFullYear()
+			if(year < 10){
+				year = '0' + year;
+			}
+			var month = today.getMonth() + 1;
+			if(month < 10){
+				month = '0' + month;
+			}
+			var date = today.getDate()
+			if(date < 10){
+				date = '0' + date;
+			}
+			 var str = ""+ year + month + date + h + m + s +"";
+			for(var i = 0;i < imgList.length;i++){
+				imgList[i].src = "../../img/number/"+str[i]+".gif";
+			}
+			console.log("hello")
+		},1000);
+	}
+</script>
+</html>
