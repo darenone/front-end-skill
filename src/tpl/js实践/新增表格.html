@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<label for="">姓名：</label>
+<input type="t" name=""  id="name">
+<label for="">年龄：</label>
+<input type="t" name=""  id="age">
+<input type="button" value="添加" id="add">
+<input type="button" value="添加" id="remove">
+<table border="1" cellspacing="0" cellpadding="5" width="500px" style="text-align: center;">
+	<thead>
+		<th>ID</th>
+		<th>姓名</th>
+		<th>年龄</th>
+		<th>操作</th>
+	</thead>
+	<tbody>
+	<tr>
+		<td>1</td>
+		<td>张三</td>
+		<td>21</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>张四</td>
+		<td>22</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>张五</td>
+		<td>23</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>张六</td>
+		<td>15</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>张七</td>
+		<td>29</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td>张八</td>
+		<td>10</td>
+		<td></td>
+	</tr>
+	</tbody>
+</table>
+</body>
+<script>
+	window.onload = function(){
+		var table = document.getElementsByTagName("table")[0];
+		//var name = document.getElementsByTagName("tbody")[0].getElementsByTagName("tr")[0].children[1].innerHTML;
+		var name = document.getElementById("name");
+		var age = document.getElementById("age");
+		var add = document.getElementById("add");
+		add.onclick = function(){
+			var tr = document.createElement("tr");
+			var td = document.createElement("td");
+			td.innerHTML = ++document.getElementsByTagName("tbody")[0].getElementsByTagName("tr").length;
+			tr.appendChild(td);
+			var td = document.createElement("td");
+			td.innerHTML = name.value;
+			tr.appendChild(td);
+			var td = document.createElement("td");
+			td.innerHTML = age.value;
+			tr.appendChild(td);
+			var td = document.createElement("td");
+			td.innerHTML = '<a href="javascript:;">删除</a>';
+			tr.appendChild(td);
+			td.getElementsByTagName("a")[0].onclick = function(){
+				document.getElementsByTagName("tbody")[0].removeChild(this.parentNode.parentNode)
+			}
+			document.getElementsByTagName("tbody")[0].appendChild(tr);
+		}
+
+	}
+</script>
+</html>

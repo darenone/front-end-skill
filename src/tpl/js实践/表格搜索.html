@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<label for="">姓名：</label>
+<input type="t" name=""  id="name">
+<input type="button" value="搜索" id="search">
+<table border="1" cellspacing="0" cellpadding="5" width="500px" style="text-align: center;">
+	<thead>
+		<th>ID</th>
+		<th>姓名</th>
+		<th>年龄</th>
+		<th>操作</th>
+	</thead>
+	<tbody>
+	<tr>
+		<td>1</td>
+		<td>张三</td>
+		<td>21</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>张四</td>
+		<td>22</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>张五</td>
+		<td>23</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>张六</td>
+		<td>15</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>张七</td>
+		<td>29</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td>张八</td>
+		<td>10</td>
+		<td></td>
+	</tr>
+	</tbody>
+</table>
+</body>
+<script>
+	window.onload = function(){
+		var table = document.getElementsByTagName("table")[0];
+		//var name = document.getElementsByTagName("tbody")[0].getElementsByTagName("tr")[0].children[1].innerHTML;
+		var name = document.getElementById("name");
+		var seaarch = document.getElementById("search");
+		var tbody = table.children[1];
+		var tr = tbody.children
+		search.onclick = function(){
+			for(var i = 0;i < tr.length;i++){
+				if(tr[i].children[1].innerHTML == name.value){
+					tr[i].style.background = "orange";
+				}else {
+					tr[i].style.background = "";
+				}
+			}
+		}
+
+	}
+</script>
+</html>
