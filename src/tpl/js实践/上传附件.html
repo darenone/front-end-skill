@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul></ul>
+	<input type="text" name="" id="txt">
+	<input type="button" value="生成一个节点" id="bt1">
+	<input type="button" value="删除一个节点" id="bt2">
+</body>
+<script>
+	window.onload = function(){
+		var ul = document.getElementsByTagName("ul")[0];
+		var btn1 = document.getElementById("bt1");
+		var btn2 = document.getElementById("bt2");
+		var txt = document.getElementById("txt");
+		btn1.onclick = function(){
+			var liList = document.createElement("li");
+			liList.innerHTML = txt.value;
+			ul.appendChild(liList);
+		}
+		btn2.onclick = function(){
+			var liList = document.createElement("li");
+			ul.appendChild(liList);
+		}
+	}
+</script>
+</html>
