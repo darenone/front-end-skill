@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>10</li>
+		<li>22</li>
+		<li>3</li>
+		<li>44</li>
+		<li>2</li>
+	</ul>
+	<input type="button" value="排序">
+</body>
+<script>
+	window.onload = function(){
+		var btn = document.getElementsByTagName("input")[0];
+		var liList = document.getElementsByTagName("ul")[0].children;
+		console.log(liList);
+		var arr = [];
+		btn.onclick = function(){
+			for(var i = 0;i < liList.length;i++){
+				arr[i] = liList[i];
+
+			}
+			arr.sort(function(liList1,liList2){
+				var n1 = parseInt(liList1.innerHTML);
+				var n2 = parseInt(liList2.innerHTML);
+				return n1 - n2;
+			});
+			for(var i = 0;i < liList.length;i++){
+				document.getElementsByTagName("ul")[0].appendChild(arr[i])
+			}
+		}
+	}
+</script>
+</html>
