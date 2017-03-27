@@ -24,6 +24,7 @@
 		var div = document.getElementsByTagName("div")[0];
 		var timer = null;
 		btn1.onclick = function(){
+			clearInterval(timer);
 			timer = setInterval(function(){
 				div.style.left = div.offsetLeft + 10 + 'px';
 			},1000);
