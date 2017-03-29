@@ -5,24 +5,37 @@
 	<title>缓冲运动</title>
 	<style>
 		div{
-			width: 300px;
-			height: 300px;
+			width: 500px;
+			height: 500px;
+			border: 1px solid black;
+			position: absolute;
+		}
+		span{
+			width: 100px;
+			height: 100px;
 			background: red;
 			position: absolute;
+			left: 0px;
+			/*left: 700px;*/
 		}
 	</style>
 </head>
 <body>
 <input type="button" value="开始运动">
-<div></div>
+<div>
+<span></span>
+</div>
 </body>
 <script>
 	window.onload = function(){
 		function startMove(){
-			var oDiv = document.getElementsByTagName("div")[0];
+			var oSpan = document.getElementsByTagName("span")[0];
 			setInterval(function(){
-				var speed = (300 - oDiv.offsetLeft)/10;
-				oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+				// 移动的速度
+				var speed = (500 - oSpan.offsetLeft)/10;
+				speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+				oSpan.style.left = oSpan.offsetLeft + Math.ceil(speed) + 'px';
+				console.log(speed)
 			},30)
 		}
 		var btn = document.getElementsByTagName("input")[0];
