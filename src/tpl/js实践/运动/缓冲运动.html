@@ -30,12 +30,15 @@
 	window.onload = function(){
 		function startMove(){
 			var oSpan = document.getElementsByTagName("span")[0];
-			setInterval(function(){
+			var timer = setInterval(function(){
 				// 移动的速度
 				var speed = (500 - oSpan.offsetLeft)/10;
 				speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
 				oSpan.style.left = oSpan.offsetLeft + Math.ceil(speed) + 'px';
 				console.log(speed)
+				if(speed == 0){
+					clearInterval(timer)
+				}
 			},30)
 		}
 		var btn = document.getElementsByTagName("input")[0];
