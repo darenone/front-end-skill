@@ -9,17 +9,37 @@
 			height: 300px;
 			position: absolute;
 			background: red;
+			right: 0;
 		}
 	</style>
 </head>
-<body>
+<body style="height: 2000px;">
 <div></div>
 </body>
 <script>
+	// 此时是滚动事件
 	window.onscroll = function(){
 		var oDiv = document.getElementsByTagName("div")[0];
-		var scro
-
+		// 网页被卷去的距离
+		scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+		//屏幕的高度-div自身的宽度+网页被卷去的距离
+		// oDiv.style.top = document.documentElement.clientHeight - oDiv.offsetHeight +　scrollTop + 'px';
+		startMove(document.documentElement.clientHeight - oDiv.offsetHeight +　scrollTop);
+	}
+	var timer = null;
+	function startMove(iTarget){
+		var oDiv = document.getElementsByTagName("div")[0];
+		clearInterval(timer);
+		timer = setInterval(function(){
+			console.log('hello')
+			var speed = (iTarget - oDiv.offsetTop) / 4;
+			speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+			if(oDiv.offsetTop == iTarget){
+				clearInterval(timer);
+			}else {
+				oDiv.style.top = oDiv.offsetTop + speed + 'px';
+			}
+		},30)
 	}
 </script>
 </html>
