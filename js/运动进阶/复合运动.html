@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			float: left;
+			margin-right: 20px;
+		}
+		span{
+			display: block;
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			position: absolute;
+			left: 0;
+			top:300px;
+		}
+	</style>
+</head>
+<body>
+	<div>变高</div>
+	<div>变高</div>
+	<div>变高</div>
+	<div>变高</div>
+	<span>变宽</span>
+	<span style="left:600px;opacity: 0.3;">渐变</span>
+</body>
+<script>
+	window.onload = function(){
+		var divList = document.getElementsByTagName("div");
+		var oSpan1 = document.getElementsByTagName("span")[0];
+		var oSpan2 = document.getElementsByTagName("span")[1];
+		for(var i = 0, length1 = divList.length; i < length1; i++){
+			divList[i].timer = null;
+			divList[i].onmouseover = function(){
+				startMove(this,300,'height');
+			}
+			divList[i].onmouseleave = function(){
+				startMove(this,200,'height');
+			}
+		}
+		oSpan1.onmouseover = function(){
+			startMove(this,300,'width');
+		}
+		oSpan1.onmouseleave = function(){
+			startMove(this,200,'width');
+		}
+		oSpan2.onmouseover = function(){
+			startMove(this,100,'opacity');
+		}
+		oSpan2.onmouseleave = function(){
+			startMove(this,30,'opacity');
+		}
+	}
+	//var timer = null;
+	function startMove(obj,iTarget,attr){
+		clearInterval(this.timer);
+		this.timer = setInterval(function(){
+						// 单独测试透明度
+						if(attr == 'opacity'){
+							current = parseFloat(getStyle(obj,attr)*100);
+						}else {
+							current = parseFloat(getStyle(obj,attr));
+						}
+						var speed = (iTarget - current)/2;
+						speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+						if(current == iTarget){
+							clearInterval(timer);
+						}else{
+							if(attr == 'opacity'){
+								obj.style.filter = 'alhpa(opacity='+(current+speed)+')';
+        						obj.style.opacity = (current+speed)/100;
+							}else {
+								obj.style[attr] = current + speed +　'px';
+							}
+
+						}
+					},30)
+	}
+	// 获取非行内样式
+	function getStyle(obj,name){
+		if (obj.currentStyle) {
+			return obj.currentStyle[name];
+		}else {
+			return getComputedStyle(obj,false)[name];
+		}
+	}
+</script>
+</html>
