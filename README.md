@@ -28,3 +28,4 @@
 * 广告定在右边固定位置.html 用到了parseInt(),scrollTop的兼容,clientHeight
 * 多个物体运动.html 用到了动态添加属性，this
 * 多个物体渐变.html 动态添加属性 所有物体互相之间不能共用任何变量 alpha要做兼容
+* 复合运动.html 运动框架完结篇
