@@ -26,3 +26,5 @@
 * 右下角广告.html运动的的目标值iTarget,目标的当前值,speed
 #### 2017年4月1号
 * 广告定在右边固定位置.html 用到了parseInt(),scrollTop的兼容,clientHeight
+#### 2017年4月1号
+* 多个物体运动.html 用到了动态添加属性，this
