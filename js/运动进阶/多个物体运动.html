@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			float: left;
+			margin-right: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+<script>
+	window.onload = function(){
+		var divList = document.getElementsByTagName("div");
+		for(var i = 0, length1 = divList.length; i < length1; i++){
+			divList[i].timer = null;
+			divList[i].onmouseover = function(){
+				startMove(this,300);
+			}
+			divList[i].onmouseleave = function(){
+				startMove(this,200);
+			}
+		}
+	}
+	//var timer = null;
+	function startMove(obj,iTarget){
+		clearInterval(this.timer);
+		this.timer = setInterval(function(){
+						var speed = (iTarget - obj.offsetWidth)/2;
+						speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+						if(obj.offsetWidth == iTarget){
+							clearInterval(timer);
+						}else{
+							obj.style.width = obj.offsetWidth + speed + 'px';
+						}
+					},30)
+	}
+</script>
+</html>

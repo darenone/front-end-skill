@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25ae42c4-835f-42b4-894f-1f32adcfc7cc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tpl/js实践/运动/右下角广告.html" afterPath="$PROJECT_DIR$/src/tpl/js实践/运动/右下角广告.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/运动/侧边广告.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/运动/停止运动切换.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/运动/右下角广告.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/运动/广告定在右边固定位置.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/运动/无缝滚动.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/运动/淡入淡出.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/运动/缓冲运动.html" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,8 +26,8 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="缓冲运动.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/运动/缓冲运动.html">
+      <file leaf-file-name="11.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/运动进阶/11.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -40,6 +46,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/tpl/js实践/动态改变div的样式.html" />
         <option value="$PROJECT_DIR$/src/tpl/js实践/运动/右下角广告.html" />
+        <option value="$PROJECT_DIR$/js/运动进阶/11.html" />
       </list>
     </option>
   </component>
@@ -102,8 +109,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -118,6 +123,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -203,11 +210,12 @@
       <workItem from="1489407427587" duration="664000" />
       <workItem from="1490836181831" duration="25000" />
       <workItem from="1491009656373" duration="10000" />
+      <workItem from="1491024942749" duration="21000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="699000" />
+    <option name="totallyTimeSpent" value="720000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -244,15 +252,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/tpl/js实践/动态改变div的样式.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tpl/js实践/运动/右下角广告.html">
+    <entry file="file://$PROJECT_DIR$/js/运动/缓冲运动.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -260,6 +260,8 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/tpl/js实践/动态改变div的样式.html" />
+    <entry file="file://$PROJECT_DIR$/src/tpl/js实践/运动/右下角广告.html" />
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -271,6 +273,14 @@
     <entry file="file://$PROJECT_DIR$/src/tpl/js实践/动态改变div的样式.html" />
     <entry file="file://$PROJECT_DIR$/src/tpl/js实践/运动/右下角广告.html" />
     <entry file="file://$PROJECT_DIR$/js/运动/缓冲运动.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/运动进阶/11.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
