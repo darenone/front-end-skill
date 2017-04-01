@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div style="height: 3000px;"></div>
+</body>
+<script type="text/javascript">
+	window.onload = function(){
+		//获取窗口宽度
+		if(window.innerWidth){
+			winWidth = window.innerWidth;
+		}else if((document.body)&&(document.body.clientWidth)){
+			winWidth = document.body.clientWidth;
+		}
+		//获取屏幕的高度`
+		if(window.innerHeight){
+			winHeight = window.innerHeight;
+		}else if ((document.body)&&(document.body.clientHeight)) {
+			winHeight = document.body.clientHeight;
+		}
+		console.log("屏幕宽度:"+winWidth+"")
+		console.log("屏幕高度:"+winHeight+"")
+	}
+	window.onscroll= function(){
+		scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+		console.log("屏幕卷去的高度:"+scrollTop+"")
+	}
+</script>
+
+</html>
