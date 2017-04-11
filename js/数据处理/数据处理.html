@@ -23,16 +23,24 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="list-group">
-					<div class="list-group-item active" id="box2">数组操作</div>
+					<div class="list-group-item active" id="box2">array操作</div>
 					<div class="dropdown list-group-item">
 						<div id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						    把数组里的对象处理后放到一个新的数组里
 						</div>
 						<button type="button" class="btn btn-info pull-right" style="padding: 5px;margin-top: -25px;" onclick="arrFormat()">点击测试</button>
-						<div class="dropdown-menu" aria-labelledby="dLabel">
-						  	var arr1 = [{'name':'张三','age':10}];<br>
-						  	var arr2 = [{'age':10}]
+					</div>
+					<div class="dropdown list-group-item">
+						<div id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    关联数组和索引数组
 						</div>
+						<button type="button" class="btn btn-info pull-right" style="padding: 5px;margin-top: -25px;" onclick="arrIndex()">点击测试</button>
+					</div>
+					<div class="dropdown list-group-item">
+						<div id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    关联数组巴拉巴拉
+						</div>
+						<button type="button" class="btn btn-info pull-right" style="padding: 5px;margin-top: -25px;" onclick="arrIndex()">点击测试</button>
 					</div>
 				</div>
 			</div>
@@ -40,21 +48,14 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="list-group">
-					<div class="list-group-item active" id="box2">对象操作</div>
+					<div class="list-group-item active" id="box2">object操作</div>
 					<div class="dropdown list-group-item">
 						<div id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						    Dropdown trigger
+						 	JSON.parse()的使用
 						</div>
-						<button type="button" class="btn btn-info pull-right" style="padding: 5px;margin-top: -25px;">点击测试</button>
+						<button type="button" class="btn btn-info pull-right" style="padding: 5px;margin-top: -25px;" onclick="jsonParse()">点击测试</button>
 						<div class="dropdown-menu" aria-labelledby="dLabel">
-						  	var arr1 = [
-								{'name':'张三','age':10},
-								{'name':'张四','age':11},
-								{'name':'张五','age':12},
-								{'name':'张六','age':13},
-								{'name':'张七','age':14},
-								{'name':'张八','age':15}
-							];
+
 						</div>
 					</div>
 				</div>
@@ -66,9 +67,9 @@
 					<div class="list-group-item active" id="box2">number操作</div>
 					<div class="dropdown list-group-item">
 						<div id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						    Dropdown trigger
+						    1492411838993ms转化为年-月-日
 						</div>
-						<button type="button" class="btn btn-info pull-right" style="padding: 5px;margin-top: -25px;">点击测试</button>
+						<button type="button" class="btn btn-info pull-right" style="padding: 5px;margin-top: -25px;" onclick="dataFormat()">点击测试</button>
 						<div class="dropdown-menu" aria-labelledby="dLabel">
 						  宗强
 						</div>
