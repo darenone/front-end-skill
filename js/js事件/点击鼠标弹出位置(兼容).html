@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+	window.onload = function(){
+		document.onclick = function(ev){
+
+			/*
+			 *IE事件对象：event
+			 *firefox事件对象：ev
+			*/
+			var oEvent = ev || event;
+			console.log('X:'+oEvent.clientX + 'Y:' + oEvent.clientY)
+		}
+	}
+</script>
+</html>
