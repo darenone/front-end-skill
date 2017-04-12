@@ -59,7 +59,7 @@
 		</ul>
 		<span>向左</span><span>向右</span>
 	</div>
-
+	<p>鼠标划入停止划出接着开始</p>
 </body>
 <script>
 window.onload = function(){
@@ -80,15 +80,18 @@ window.onload = function(){
    		}
 	}
 	var timer = setInterval(timerFun,30);
-	//鼠标移入移除控制滑动效果
+
+	// 鼠标移入移除控制滑动效果
 	ul.onmouseover = function(){
 		clearInterval(timer);
 	}
 	ul.onmouseout = function(){
-		//这里必须加上变量名timer
+
+		// 这里必须加上变量名timer
 		timer = setInterval(timerFun,30)
 	}
-	//点击按钮使其向左向右走
+
+	// 点击按钮使其向左向右走
 	document.getElementsByTagName("div")[0].children[1].onclick = function(){
 		speed = 2;
 	}
