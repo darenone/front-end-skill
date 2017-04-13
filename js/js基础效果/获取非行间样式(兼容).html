@@ -19,9 +19,13 @@
 		//IE和其他浏览器有差异
 		function getStyle(obj,name){
 			if(obj.currentStyle){
+
+				// IE支持
 				return obj.currentStyle[name];
 			}else {
-				return getComputedStyle(obj,false)[name]
+
+				// firFox和google支持
+				return window.getComputedStyle(obj,false)[name] //name是字符串
 			}
 		}
 		var div = document.getElementsByTagName("div")[0];

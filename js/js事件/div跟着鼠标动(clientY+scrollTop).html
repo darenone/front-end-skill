@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 300px;
+			height: 300px;
+			background-color: orange;
+			position: absolute;
+			left: 0;
+		}
+	</style>
+</head>
+<!-- 当body出现滚动条时回出现bug -->
+<body style="height: 3000px;" ">
+	<div style="left: 0;top:0;"></div>
+	<p>当body出现滚动条时回出现bug</p>
+</body>
+<script>
+	/*
+	 *clientX和clientY是相对于可视区来说的
+	 *div相对于body来定位的
+	*/
+	window.onload = function(){
+		var div = document.getElementsByTagName("div")[0];
+		document.onmousemove = function(ev){
+
+			// 调用getPosxy函数就可以得到鼠标的位置，里面已经做了对bug的处理
+			var oEvent = ev || event;
+			var pos = getPosxy(oEvent);
+			div.style.left = pos.x + 'px';
+			div.style.top = pos.y + 'px';
+		}
+
+		// 封装一个简单的函数
+		function getPosxy(ev){
+			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+			var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+			return {x: ev.clientX + scrollLeft,y: ev.clientY + scrollTop}
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#div1{
+			width: 100px;
+			height: 100px;
+			background: black;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+<script>
+	window.onload = function(){
+		var div1 = document.getElementById("div1");
+		document.onkeydown = function(ev){
+			var oEvent = ev || event;
+
+			// 往左
+			if(oEvent.keyCode == 37){
+				div1.style.left = div1.offsetLeft -10 + 'px';
+			}else if (oEvent.keyCode == 39) {
+				div1.style.left = div1.offsetLeft + 10 + 'px';
+			}
+		}
+	}
+</script>
+</html>

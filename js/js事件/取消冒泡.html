@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 500px;
+			height: 500px;
+			border: 1px solid black;
+			margin-top: 100px;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="按钮">
+	<div style="display: none;">点击按钮可以控制此区域的显示和消失;同时点击其他区域也可以使本区域消失</div>
+</body>
+<script>
+	window.onload = function(){
+		var input = document.getElementsByTagName("input")[0]
+		var div = document.getElementsByTagName("div")[0]
+		var turn = false;
+		input.onclick = function(ev){
+
+			// 取消冒泡
+			var oEvent = ev || event;
+			oEvent.cancelBubble = true;
+			if(turn == false){
+				turn = true;
+				div.style.display = "block";
+			}else {
+				turn = false;
+				div.style.display = 'none';
+			}
+		}
+		document.onclick = function(){
+			div.style.display = 'none';
+		}
+	}
+</script>
+</html>

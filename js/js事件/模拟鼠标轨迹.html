@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			background: red;
+			top:0;
+			left: 0;
+		}
+	</style>
+</head>
+<body style="position: absolute;">
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+
+</body>
+<script>
+	window.onload = function(ev){
+		var divList = document.getElementsByTagName("div");
+		document.onmousemove = function(ev){
+			console.log(1)
+			var oEvent = ev || event;
+			var pos = getPosxy(oEvent);
+
+			for(var i = divList.length - 1;i > 0;i--){
+				divList[i].style.left = divList[i - 1].offsetLeft + 'px';
+				divList[i].style.top = divList[i - 1].offsetTop + 'px';
+			}
+			divList[0].style.left = pos.x  + 'px';
+			divList[0].style.top = pos.y + 'px';
+		}
+		function getPosxy(ev){
+			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+			var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+			return {x: ev.clientX + scrollLeft,y: ev.clientY + scrollTop}
+		}
+	}
+</script>
+</html>
