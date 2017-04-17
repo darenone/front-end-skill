@@ -30,8 +30,10 @@
 				var oEvent = ev || event;
 				var l = oEvent.clientX - disX;
 				var t = oEvent.clientY - disY;
+
+                // 限制上右下左的范围
 				if(l < 0){
-					l = 0;
+				l = 0;
 				}else if (l > document.documentElement.clientWidth - div.offsetWidth) {
 					l = document.documentElement.clientWidth - div.offsetWidth;
 				}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+function creatPerson(name,qq){
+    var obj = new Object();
+    obj.name = name;
+    obj.qq = qq;
+    obj.showName = function(){
+       console.log('我的名字叫:'+this.name);
+    }
+    obj.showQq = function(){
+        console.log('我的QQ号：'+this.qq)
+    }
+    return obj;
+}
+
+    // 用户用的
+    var person = creatPerson('张三','1291342008')
+    person.showName();
+    person.showQq();
+</script>
+</html>

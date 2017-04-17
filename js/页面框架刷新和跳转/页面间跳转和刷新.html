@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        a{
+            height: 20px;
+            background: red;
+            display:inline-blocks;
+        }
+    </style>
+</head>
+<body>
+   <div>
+        <a href="javascript:history.go(-1)">返回上一页</a>
+        <a href="javascript:location.reload()">重载页面，本地刷新</a>
+        <a href="javascript:history.go(-1);location.reload()">返回上一页重载页面，本地刷新</a>
+        <a href="javascript:history.go(-2);location.reload()">返回前二页重载页面，本地刷新</a>
+        <a href="#" onclick="self.location=document.referrer;">返回</a>
+   </div>
+</body>
+<script>
+    function myrefresh(){
+       window.location.reload();
+       alert('当前页面被刷新');
+    }
+    //setTimeout('myrefresh()',4000);
+</script>
+</html>

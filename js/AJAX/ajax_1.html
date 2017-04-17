@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="按钮" onclick="fn()">
+</body>
+<script src="ajax.js"></script>
+<script>
+    function fn(){
+        ajax('a.json?t='+new Date().getTime(),function(str){
+            var json = JSON.parse(str);
+            console.log(json);
+        },function(){
+            console.log('失败！')
+        })
+    }
+</script>
+</html>

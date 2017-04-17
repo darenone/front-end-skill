@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn1">
+</body>
+<script>
+    window.onload = function(){
+        var btn = document.getElementById("btn1");
+        if(btn.attachEvent){
+            btn.attachEvent('onclick',function(){
+                console.log(1)
+            })
+            btn.attachEvent('onclick',function(){
+                console.log(2)
+            })
+        }else{
+            btn.addEventListener('click',function(){
+                console.log(1)
+            },false);
+            btn.addEventListener('click',function(){
+                console.log(2)
+            },false)
+        }
+
+        // 封装一个函数
+        function addEvent(obj,ev,fn){
+
+            // IE7及以下
+            if(obj.attachEvent){
+                obj.attachEvent('on'+ev,fn);
+            }else {
+                obj.addEventListener(ev,fn,false) // firfox和chrome
+            }
+        }
+
+        /*
+         *解除绑定
+         *eatachEvent 和 removeEventListeners
+        */
+    }
+</script>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 50px;
+            height: 50px;
+            background: orange;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+<script>
+    window.onload = function(){
+         var div1 = document.getElementById("div1");
+        //1 div1.onmousedown = function(ev){
+        //     var oEvent = ev || event;
+        //     disX = oEvent.clientX - div1.offsetLeft;
+        //     disY = oEvent.clientY - div1.offsetTop;
+            //2 document.onmousemove = function(ev){
+            //     var oEvent = ev || event;
+            //     div1.style.left = oEvent.clientX - disX + 'px';
+            //     div1.style.top = oEvent.clientY - disY + 'px';
+            // }
+            //3 document.onmouseup = function(){
+            //     document.onmousemove = null;
+            //     document.onmouseup = null;
+            // }
+        // }
+        new Drag("div1");
+    }
+        /*
+         *1.把函数嵌套拿出来
+         *
+        */
+        // function Drag(){
+        //     var div1 = document.getElementById("div1");
+        //     div1.onmousedown = fnDown;
+        // }
+        // function fnDown(ev){
+        //     var oEvent = ev || event;
+        //     disX = oEvent.clientX - div1.offsetLeft;
+        //     disY = oEvent.clientY - div1.offsetTop;
+        //     document.onmousemove = fnMove;
+        //     document.onmouseup = fnUp;
+        // }
+        // function  fnMove(ev){
+        //     var oEvent = ev || event;
+        //     div1.style.left = oEvent.clientX - disX + 'px';
+        //     div1.style.top = oEvent.clientY - disY + 'px';
+        // }
+        // function  fnUp(){
+        //     document.onmousemove = null;
+        //     document.onmouseup = null;
+        // }
+        /*
+         *2.把需要变量拿出来,作为属性来用
+         *
+        */
+        // function Drag(id){
+        //     this.div1 = document.getElementById(id);
+        //     this.disX = 0;
+        //     this.disY = 0;
+        //     this.div1.onmousedown = fnDown;
+        // }
+        // function fnDown(ev){
+        //     var oEvent = ev || event;
+        //     this.disX = oEvent.clientX - this.div1.offsetLeft;
+        //     this.disY = oEvent.clientY - this.div1.offsetTop;
+        //     document.onmousemove = fnMove;
+        //     document.onmouseup = fnUp;
+        // }
+        // function  fnMove(ev){
+        //     var oEvent = ev || event;
+        //     this.div1.style.left = oEvent.clientX - this.disX + 'px';
+        //     this.div1.style.top = oEvent.clientY - this.disY + 'px';
+        // }
+        // function  fnUp(){
+        //     document.onmousemove = null;
+        //     document.onmouseup = null;
+        // }
+        /*
+         *3.把函数写在类的原型上面,作为其方法
+         *
+        */
+        // function Drag(id){
+        //     this.div1 = document.getElementById(id);
+        //     this.disX = 0;
+        //     this.disY = 0;
+        //     this.div1.onmousedown = this.fnDown; // this指向的是this.div1所以是错误的,所以要改为that
+        // }
+        // Drag.prototype.fnDown = fnDown(ev){
+        //     var oEvent = ev || event;
+        //     this.disX = oEvent.clientX - this.div1.offsetLeft;
+        //     this.disY = oEvent.clientY - this.div1.offsetTop;
+        //     document.onmousemove = this.fnMove;
+        //     document.onmouseup = this.fnUp;
+        // }
+        // Drag.prototype.fnMove = fnMove(ev){
+        //     var oEvent = ev || event;
+        //     this.div1.style.left = oEvent.clientX - this.disX + 'px';
+        //     this.div1.style.top = oEvent.clientY - this.disY + 'px';
+        // }
+        // Drag.prototype.fnUp = function(){
+        //     document.onmousemove = null;
+        //     document.onmouseup = null;
+        // }
+        /*
+         *4.修改this指向
+         *
+        */
+        function Drag(id){
+            var that = this;
+            this.div1 = document.getElementById(id);
+            this.disX = 0;
+            this.disY = 0;
+            this.div1.onmousedown = function(ev){  // this指向的是this.div1所以是错误的,所以要改为that
+                that.fnDown(ev);
+            }
+        }
+        Drag.prototype.fnDown = function(ev){
+            var that = this;
+            var oEvent = ev || event;
+            this.disX = oEvent.clientX - this.div1.offsetLeft;
+            this.disY = oEvent.clientY - this.div1.offsetTop;
+            document.onmousemove = function(ev){
+                that.fnMove(ev);
+            }
+            document.onmouseup = function(){
+                that.fnUp();
+            }
+        }
+        Drag.prototype.fnMove = function(ev){
+            var oEvent = ev || event;
+            this.div1.style.left = oEvent.clientX - this.disX + 'px';
+            this.div1.style.top = oEvent.clientY - this.disY + 'px';
+        }
+        Drag.prototype.fnUp = function(){
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+</script>
+</html>

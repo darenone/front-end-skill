@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #div{
+            width: 300px;
+            height: 150px;
+            background: red;
+            position: absolute;
+            }
+        .box{
+            border: 1px dashed black;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+        <div id="div">
+            <p style="width: 100%;height: 10%;background:orange;">菜单头</p>
+            <p>菜单内容</p>
+        </div>
+</body>
+<script>
+    window.onload = function(){
+        var div = document.getElementById("div");
+        div.onmousedown = function(ev){
+            var oEvent = ev || event;
+
+            /*
+             *oEvent.clientX鼠标距离屏幕左侧的距离
+             *div.offsetLeft div距离父元素左侧的距离
+             *二者的距离差
+            */
+            disX = oEvent.clientX - div.offsetLeft;
+            disY = oEvent.clientY - div.offsetTop;
+            console.log(oEvent.clientX + '\n' + div.offsetLeft)
+
+            /*
+             *创建一个虚框
+             *给虚框添加样式
+             *把虚框添加到body里面
+            */
+            var box = document.createElement("div");
+            box.className = 'box';
+            box.style.width = div.offsetWidth - 2 + 'px';
+            box.style.height = div.offsetHeight - 2 + 'px';
+            box.style.left = div.offsetLeft + 'px';
+            box.style.top = div.offsetTop + 'px';
+            document.body.appendChild(box);
+            document.onmousemove = function(ev){
+                var oEvent = ev || event;
+
+                // 控制左右
+                // 鼠标距离左侧的距离减去二者的距离差就是div距离左侧的距离
+                var l = oEvent.clientX - disX;
+
+                // 控制上下
+                var t = oEvent.clientY - disY;
+
+                // 限制上右下左的范围
+                if(l < 50){
+                l = 0;
+                }else if (l > document.documentElement.clientWidth - div.offsetWidth - 50) {
+                    l = document.documentElement.clientWidth - div.offsetWidth;
+                }
+                if(t < 50){
+                    t = 0;
+                }else if (t > document.documentElement.clientHeight - div.offsetHeight - 50) {
+                    t = document.documentElement.clientHeight - div.offsetHeight;
+                }
+                box.style.left = l + 'px';
+                box.style.top = t + 'px';
+            }
+            document.onmouseup = function(){
+                document.onmousemove = null;
+                document.onmouseup = null;
+                div.style.left = box.offsetLeft + 'px';
+                div.style.top = box.offsetTop + 'px';
+                document.body.removeChild(box);
+            }
+
+            // 阻止默认行为
+            // 可以防止弹窗内的内容被选中
+            return false;
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    function A () {
+        console.log('hello')
+    }
+    A();
+    A.call(); //可以看到这两种方式一样
+
+    function B(){
+        console.log(this);
+    }
+    B();
+    B.call(10); //call可以改变this的指向
+
+    function C(a,b){
+        console.log(this +'\n' + a + '\n' + b)
+    }
+    C(10,5);
+    C.call('hello',10,5)
+</script>
+</html>

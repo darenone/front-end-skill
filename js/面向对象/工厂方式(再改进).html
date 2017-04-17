@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+function CreatPerson(name,qq){
+    // var obj = new Object();
+    this.name = name;
+    this.qq = qq;
+    // return obj;
+}
+CreatPerson.prototype.showName = function(){
+    console.log('我的名字叫:'+this.name);
+}
+CreatPerson.prototype.showQq = function(){
+    console.log('我的QQ号：'+this.qq);
+}
+    // this指当前的方法属于谁
+    // 用户用的
+    // creatPerson是类  person 和 person2是对象
+    var person = new CreatPerson('张三','1291342008')
+    person.showName();
+    person.showQq();
+    var person2 = new CreatPerson('李四','123456');
+    person2.showName();
+    person2.showQq();
+    console.log(person.showName == person2.showName);
+</script>
+</html>

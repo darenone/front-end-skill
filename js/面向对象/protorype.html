@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+
+    var arr = new Array();
+    var arr1 = [1,2,3,4,5];
+    var arr2 = [2,3,4,5,6];
+
+    // 记得加this
+    // 原型用到类上面
+    Array.prototype.sum = function(){
+        var result = null;
+        for(var i = 0;i < this.length;i++){
+            result += this[i];
+        }
+        return result;
+    }
+    console.log(arr1.sum());
+    console.log(arr2.sum());
+</script>
+</html>

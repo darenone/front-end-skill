@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #parent{
+            width: 500px;
+            height: 30px;
+            background: gray;
+            position: relative;
+            margin: 0 auto;
+        }
+        #div1{
+            width: 30px;
+            height: 30px;
+            background: red;
+            position: absolute;
+        }
+        #div2{
+            width: 0;
+            height: 30px;
+            background: orange;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #div3{
+            width: 0;
+            height: 0;
+            background: green;
+        }
+        #div4{
+            width: 300px;
+            height: 300px;
+            background: red;
+            filter: alpha(opacity:0);
+            opacity: 0;
+        }
+        #div5{
+            width: 200px;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        #div6{
+            width: 200px;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="div1"></div>
+        <div id="div2"></div>
+    </div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+    <div id="div5">
+    <div id="div6">
+        不同的颜色标注是因为做好标注，比我今天锻炼了胸部和肩膀，我就把刚才锻炼用过的动作用相同的颜色标注起来，到了明天再用不用的颜色标注其他练过的动作，就这样循环，右边是我当时练器械时候所能举起或者拉起的最大公斤数，当然了这个数目到现在已经发生了很大的变化，其实身上的肌肉是很好锻炼的的，只要不断地加强刺激，如何加强刺激呢？当然要不断地去突破自己的极限，强迫让自己推出舒适区，肌肉才能不断地长结实，这个过程中在吃上还是要注意一些，吃牛肉有点儿太奢侈了，吃鸡蛋，肌肉和蔬菜呢，这样太麻烦，我就买了一桶增肌粉，里面并不完全都是蛋白粉，还含有大量的糖类，这样也就不用健身前非要吃些面包片和饼干了。健身之前呢，先喝半杯，健身之后再喝半杯就可以了！说到蛋白粉，健身小白还是不要喝这个玩意儿了，因为如果你锻炼的程度达不到的话，体内多余的蛋白质就很难消化掉，剩余的就会加重肾脏的负担，对身体难免有危险，如果真的需要喝，我建议还是选择增肌粉吧！身体哪个部位的肉最难锻炼呢？那就是腹部，人体内多余的脂肪很容易就会堆积在肚子上，我2016跑了300公里都没有把肚子上不明显的二两肥肉跑掉，足以说明腹部的脂肪还是很难消下去的，如果腹部的脂肪不消耗掉，那八块儿腹肌就显现不出来了。所以，对腹部的训练占据了我锻炼的近一半时间，现在我也发现了原因，或许是因为我一直保持匀速跑步的结果造成了实体已经适应了这个速度，而且调节到了消耗最少脂肪的程度，所以现在我的跑步策略就是，基本速度8，五分钟之后加到8.5五分钟之后加到9......这样半个小时之后速度就到10了，不给身体找到消耗最少能量的机会，这样脂肪燃烧也是最快的，每当跑完后，自己腹部的肌肉就明显的展现出来了，这或许就是一个积极的信号，证明这种锻炼方式还是有效的。各位同学或许可以尝试着利用我的方式，哈哈！从跑步机上下来之后就是系统的机械训练了，每个动作都安排4次，间隔半分钟左右，其实我的健身安排还是有些问题！举个例子：当我做完平板杠铃卧推之后想去锻炼肩部就发现没有多余的力气做反向机械飞鸟了，so~各位同学，你们要根据自己身体的实际情况来安排健身计划,因为阿拉并没有找教练指导，有些动作标准不标准自己都不晓得，不过，你可以留意教练在做的时候是什么样子或者那些已经练出来腱子肉的哥们儿是如何做的，跟着模仿就是了。跑完步锻炼完腱子肉已经是一个多小时了，然后换上衣服跑去游泳十几分钟，也有助于燃脂，阿拉不会蛙泳，只会仰泳，还是小时候在我们那个小池塘里学的，哈哈，小孩子游得都比我溜~
+    </div>
+
+    </div>
+</body>
+<script>
+    /*
+     *鼠标按下
+     *鼠标移动
+     *鼠标弹起
+     *要明白这几个事件都是加在谁的身上
+    */
+    window.onload = function(){
+        var parent = document.getElementById("parent");
+        var div1 = document.getElementById("div1");
+        var div2 = document.getElementById("div2");
+        var div3 = document.getElementById("div3");
+        var div4 = document.getElementById("div4");
+        var div5 = document.getElementById("div5");
+        var div6 = document.getElementById("div6");
+        div1.onmousedown = function(ev){
+            var oEvent = ev || event;
+            disX = oEvent.clientX - div1.offsetLeft;
+            parent.onmousemove = function(ev){
+                var oEvent = ev || event;
+                var l = oEvent.clientX - disX;
+                if(l < 0){
+                    l = 0;
+                }
+                if(l > parent.offsetWidth - div1.offsetWidth){
+                    l = parent.offsetWidth - div1.offsetWidth;
+                }
+                div1.style.left = l + 'px';
+                //scale表示滑块所到达的一个比例
+                var sacle = l / (parent.offsetWidth - div1.offsetWidth);
+                div2.style.width = (parent.offsetWidth - div1.offsetWidth) * sacle +　'px';
+                div3.style.width = (parent.offsetWidth - div1.offsetWidth) * sacle +　'px';
+                div3.style.height = (parent.offsetWidth - div1.offsetWidth) * sacle +　'px';
+                div4.style.opacity  = sacle;
+                div4.style.filter = 'alpha(opacity = '+sacle*100+')';
+                console.log(div6.offsetHeight)
+                console.log(div5.offsetHeight)
+                div6.style.top = -(div6.offsetHeight - div5.offsetHeight) * sacle +　'px';
+            parent.onmouseup = function(ev){
+                parent.onmousemove = null;
+                parent.onmouseup = null;
+            }
+        }
+    }
+}
+</script>
+</html>

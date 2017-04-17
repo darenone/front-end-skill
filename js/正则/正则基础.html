@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 规则  search match replace test
+
+    var re1 = new RegExp('a','i'); // 找到a且忽略大小写
+
+    //var re = /a/i;
+
+    var str = 'Abcdef';
+    console.log(str.search(re1)) // 返回一个位置
+
+    // 找到字符串的第一个数字
+    var str = 'abcdef 12 23 345vvcccccccXYT';
+    var re2 = /\d/; //找数字
+    console.log(str.search(re2))
+
+    // match把所有匹配的东西全都提取出来
+
+    var re3 = /\d/g; // 找所有的数字并提取出来
+    console.log(str.match(re3));
+
+    var re4 = /\d\d/g; // 取两个在一起的
+    console.log(str.match(re4));
+
+    var re5 = /\d\d\d/g; // 取三个在一起的
+    console.log(str.match(re5));
+
+    var re6 = /\d+/g; // 取若干个
+    console.log(str.match(re6));
+
+    var re7 = /c/g;
+    console.log(str.replace(re7,'0')); // 把str中全部的c变为0
+
+    // 敏感词过滤
+
+    var str1 = '傻逼 逗比  你妈的 md hello 你好';
+    var re8 = /傻逼|逗比|你妈的|md/g;
+    console.log(str1.replace(re8,'*'));
+
+    // []元字符的使用
+
+    var str2 = 'apc xpc bpc npc';
+    var re9 = /[abc]pc/g; // 全局匹配含有apc bpc cpc的字符串
+    console.log(str2.match(re9));
+
+    var str3 = 'acjlhfdnieAAAAfefffsifhf1541155d--33';
+    var re10 = /[0-9]/g;
+    var re11 = /[0-9]+/g;
+    var re12 = /[a-z]/gi;
+    var re13 = /[a-z]+/gi;
+    console.log(str3.match(re10));
+    console.log(str3.match(re11));
+    console.log(str3.match(re12));
+    console.log(str3.match(re13));
+
+    // 转义字符
+    /*
+     * .  任意字符
+     * \d \w \s  \d表示数字[0-9]  \w表示英文 数字 下划线[0-9a-z_] \s表示空白字符
+     * \D \W \S  \D  [^0-9]除了0-9  \W 除了[^0-9a-z_] \D非空白字符
+     * ^ 不出现在[]代表行首
+     * $ 代表行尾
+     * /^\w+@[a-z0-9]+\.[a-z]+$/i; // 从开头到结尾中间只能出现规定的内容
+    */
+    var str4 = '&nbsp;&nbsp;&nbsp;&nbsp;苏凌他们望着高台上的那些西院学长，一<h1>时间气势也是弱</h1>了一些，特别是当他们见到那名为红绫的女孩时，眼神先是火热一下，然后又是缩缩头，这可是北院中真正的风云人物，那等追随者，就连他们东院都是有着不少<br>'
+    var re14 = /<[^<>]+>/g; // 除了<>以外的任意字符
+    console.log(str4.replace(re14,''));
+
+    // 量词
+    /*
+     * {n} 正好出现n次
+     * {n,m} 最少n次，最多m次
+     * {n,} 最少n次，最多不限
+     * + {1,} 最少出现一次
+     * ? {0,1} 表示可有可无
+     * * {0,} 可有可无  不建议使用
+     * \d{8} 八位数字  [1-9]\d{7}第一位1-9之间某个数字后面7位数字任意   [1-9]\d{4,10}第一位1-9之间的某个数字后面的数字至少4位最多10位
+     * 021-22564784(固话)可表示位(0\d{2,3}-)?[1-9]\d{7}(-\d{1,5})?
+    */
+
+</script>
+</html>

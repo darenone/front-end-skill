@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 50px;
+            height: 50px;
+            background: orange;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+        #div2{
+            width: 50px;
+            height: 50px;
+            background: green;
+            position: absolute;
+            left: 100px;
+            right: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+<script src="drag.js"></script>
+<script>
+    new Drag("div1");
+    function LimitDrag(id){
+        Drag.call(this,id);  // 继承属性
+    }
+    for(var i in Drag.prototype){
+        LimitDrag.prototype[i] = Drag.prototype[i]; // 继承方法
+    }
+    LimitDrag.prototype.fnMove = function(ev){
+        var oEvent = ev || event;
+        var l = oEvent.clientX - this.disX;
+        var t = oEvent.clientY- this.disY;
+        if(l < 0){
+            l = 0;
+        }else if (l > document.documentElement.clientWidth - this.div1.offsetWidth) {
+            l = document.documentElement.clientWidth - this.div1.offsetWidth;
+        }
+
+        this.div1.style.left = l+ 'px';
+        this.div1.style.top = t + 'px';
+    }
+    new LimitDrag("div2");
+</script>
+
+</html>

@@ -45,6 +45,14 @@ function arrIndex(){
 		arr2[id] = arr1[i].name;
 	}
 }
+function dataFor(){
+    var data1 = new Date("January 12,2006 22:19:35");
+    var data2 = new Date("January 12,2006");
+    var data3 = new Date(2006,0,12,22,19,35);
+    var data4 = new Date(2006,0,12);
+    var data5 = new Date(1137075575000);
+    console.log(data1 + '\n' + data2 + '\n' + data3 + '\n' + data4 + '\n' + data5 );
+}
 function dataFormat(ms){
 	timeFormat = "yyyy-MM-dd hh:mm:ss";
     dayFormat = "yyyy-MM-dd";
@@ -72,4 +80,39 @@ Date.prototype.Format = function (fmt) { //author: meizz
         if (new RegExp("(" + k + ")").test(fmt))
             fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
     return fmt;
+}
+function strSearch(){
+    var str = 'abcdefgh';
+    var index = str.search('b')
+    console.log('var str = abcdefgh'+'var index = str.search(b)')
+    console.log('返回查找到的下标：'+ index)
+}
+function strSubString(){
+    var str = 'abcdefgh';
+    var index = str.substring(1,4)
+    console.log('var str = abcdefgh'+'var index = str.aubString(1,4)')
+    console.log('返回截取的字符串：'+ index)
+}
+function strCharAt(){
+    var str = 'abcdefgh';
+    var index = str.charAt(1)
+    console.log('var str = abcdefgh'+'var index = str.charAt(1)')
+    console.log('返回指定的某一项：'+ index)
+}
+function strSplit(){
+    var str = 'abcdefgh';
+    var index = str.split('')
+    console.log('var str = abcdefgh'+'var index = str.split(,)')
+    console.log('分割为数组：'+ index)
+}
+function strNumber(){
+    var str='12 fff 32 str 15 30';
+    var tmp = '';
+    var arr = [];
+    for(var i = 0;i < str.length;i++){
+        if(str.charAt(i) >= '0' && str.charAt(i) <= '9'){
+            tmp += str.charAt(i);
+        }
+    }
+    console.log(tmp);
 }
