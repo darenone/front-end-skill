@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            background: orange;
+            height: 150px;
+        }
+        .atricle{
+            background: green;
+            height: 300px;
+        }
+        .atricle .left{
+            background: blue;
+            float: left;
+            width: 20%;
+            height: 150px;
+            margin-left: -100%;
+        }
+        .atricle .middle{
+            float: left;
+            width: 100%;
+            background: gray;
+            height: 150px;
+        }
+        .atricle .middle .inner{
+            margin-left: 20%;
+            margin-right: 30%;
+        }
+        .atricle .right{
+            background: red;
+            float: left;
+            width: 30%;
+            margin-left: -30%;
+            height: 150px;
+        }
+        .footer{
+            background: yellow;
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        我是头
+    </div>
+    <div class="atricle">
+
+        <div class="middle">
+            <div class="inner">我是中间</div>
+        </div>
+        <div class="left">我只左</div>
+        <div class="right">我是右</div>
+    </div>
+    <div class="footer">
+    </div>
+
+</body>
+</html>

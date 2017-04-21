@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="按钮" onclick="fn()">
+    <input type="text" value="" id="txt1">
+</body>
+<script src="ajax.js"></script>
+<script src="index.js"></script>
+<script>
+    function fn(){
+        ajax('get','a.json?t='+new Date().getTime(),function(str){
+            var json = JSON.parse(str);
+			console.log(json)
+			<!-- if(json){ -->
+				<!-- alert('添加成功！'); -->
+			<!-- } -->
+        },function(str){
+            console.log('请求异常原因:'+str);
+        })
+    }
+    <!-- document.getElementById("txt1").oninput = function(){ -->
+        <!-- console.log('数s据改变'); -->
+    <!-- } -->
+</script>
+</html>

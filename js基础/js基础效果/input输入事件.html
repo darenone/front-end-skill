@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="txt1">
+</body>
+<script>
+    window.onload = function(){
+        document.getElementById("txt1").oninput = function(){
+            console.log('输入框被改变了');
+        }
+    }
+</script>
+</html>
