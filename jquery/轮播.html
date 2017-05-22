@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .main{
+            width: 760px;
+            height: 300px;
+            position: relative;
+            /*border: 1px solid black;*/
+        }
+        .pic{
+            width: 100%;
+            height: 100%;
+        }
+        .pic ul{
+            width: 100%;
+            height: 100%;
+            background: #00ae9d;
+            overflow: hidden;
+        }
+        .pic ul li{
+            display: block;
+           /* list-style: none;*/
+            /*float:right;*/
+            width: 100%;
+            height: 100%;
+            background: #fdb933;
+            /*border: 1px solid black;*/
+            position: relative;
+        }
+        .pic ul li .img1{
+            position: absolute;
+            left: -760px;
+            top: 0;
+        }
+        .pic ul li .img2{
+            position: absolute;
+            left: -30px;
+            top: 0;
+            display: none;
+        }
+        .nav{
+            position: absolute;
+            left: 77%;
+            top: 90%;
+        }
+        .nav ul li{
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            float: left;
+            margin-left: 10px;
+        }
+        .bg{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="pic">
+            <ul>
+                <li style="background: url(image/bg1.jpg) no-repeat;">
+                    <img src="image/text1.png" alt="" class="img1">
+                    <img src="image/con1.png" alt="" class="img2">
+                </li>
+                <li style="background: url(image/bg2.jpg) no-repeat;">
+                    <img src="image/text2.png" alt="" class="img1">
+                    <img src="image/con2.png" alt="" class="img1">
+                </li>
+                <li style="background: url(image/bg3.jpg) no-repeat;">
+                    <img src="image/text3.png" alt="" class="img1">
+                    <img src="image/con3.png" alt="" class="img1">
+                </li>
+                <li style="background: url(image/bg4.jpg) no-repeat;">
+                    <img src="image/text4.png" alt="" class="img1">
+                    <img src="image/con4.png" alt="" class="img1">
+                </li>
+                <li style="background: url(image/bg5.jpg) no-repeat;">
+                    <img src="image/text5.png" alt="" class="img1">
+                    <img src="image/con5.png" alt="" class="img1">
+                </li>
+            </ul>
+        </div>
+        <div class="nav">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        /*
+         * $()
+         * eq()
+         * find()
+         * animate({},1000,function(){})
+         * fadeIn()
+         * siblings()
+         * fadeOut()
+         * css()
+         * stop()
+         * addClass()
+         * removeClass()
+        */
+        var index = 0;
+        // bug
+        show(0);
+        $('.nav ul li ').eq(0).addClass('bg')
+        function show(index){
+            console.log(2)
+            $('.pic ul li ').eq(index).find('.img1').animate({'left':'0px'},800,function(){
+                $('.pic ul li ').eq(index).find('.img2').css('display','block'); //第二张图片显示
+                $('.pic ul li ').eq(index).find('.img2').stop().animate({'left':'0px'},800); // 第二张图片执行动画
+            });
+        }
+        setInterval(change,2500)
+        function change(){
+            console.log(1)
+            index++;
+            if(index == $('.pic ul li ').size()){
+                index = 0;
+            }
+            $('.nav ul li ').eq(index).addClass('bg').siblings().removeClass('bg');
+            $('.pic ul li ').eq(index).fadeIn(100).siblings().fadeOut(100);
+            $('.pic ul li ').eq(index).find('.img1').css('left','-760px');
+            $('.pic ul li ').eq(index).find('.img2').css('left','-30px');
+             show(index);
+
+        }
+    })
+</script>
+</html>

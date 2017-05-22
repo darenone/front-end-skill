@@ -6,10 +6,9 @@
     */
 function ajax(method,url,fnSuccess,fnFaild,data){
 		creatXmlHttpRequest();
-		console.log(xhr);
 		if(method == 'post'){
 			xhr.open(method,url,true);
-			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded"); 
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 			xhr.send(data);
 			// xhr.send("fname=Bill&lname=Gates");
 		}else if(method == 'get'){
@@ -17,7 +16,7 @@ function ajax(method,url,fnSuccess,fnFaild,data){
 			xhr.send(null);
 		}else{
 			console.log('参数异常！');
-		}       
+		}
         xhr.onreadystatechange = function(){
 			if(xhr.readyState == 4){
 				if(xhr.status == 200){
@@ -27,10 +26,10 @@ function ajax(method,url,fnSuccess,fnFaild,data){
 				}
 			}
 			// if((xhr.readyState == 4)&&(xhr.status == 200)){
-				// fnSuccess(xhr.responseText);	
+				// fnSuccess(xhr.responseText);
 			// }else{
 				// // fnFaild(xhr.status);
-				
+
 			// }
             // if(xhr.readyState == 4){
                 // if(xhr.status == 200){
@@ -46,7 +45,7 @@ function ajax(method,url,fnSuccess,fnFaild,data){
 var xhr;
 function creatXmlHttpRequest(){
 	if(window.XMLHttpRequest){
-		xhr = new  XMLHttpRequest(); 
+		xhr = new  XMLHttpRequest();
 	}else if(window.ActiveXObject){
 		// IE6
         xhr = new ActiveXObject('Msxml2.XMLHTTP');

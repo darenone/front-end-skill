@@ -22,13 +22,20 @@
 		var div = document.getElementsByTagName("div")[0]
 		var turn = false;
 		input.onclick = function(){
-			if(turn == false){
-				turn = true;
-				div.style.display = "block";
-			}else {
-				turn = false;
-				div.style.display = 'none';
-			}
+			turn = !turn;
+			turn ? div.style.display = 'block': div.style.display = 'none';
+			// if(turn == false){
+			// 	turn = true;
+			// 	div.style.display = "block";
+			// }else {
+			// 	turn = false;
+			// 	div.style.display = 'none';
+			// }
+			// if(turn == !turn){
+			// 	div.style.display = 'block';
+			// }else {
+			// 	div.style.display = 'none';
+			// }
 		}
 	}
 </script>
